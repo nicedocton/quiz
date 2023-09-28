@@ -1,0 +1,1 @@
+import{x as s}from"./entry.8257ff69.js";const c=s("ages",{state:()=>({activeAge:""}),actions:{setAge(e){this.activeAge=e,document.cookie=`age=${this.activeAge}`},loadAge(){const e=document.cookie.split(";");for(const t of e){const[o,i]=t.trim().split("=");if(o==="age"){this.activeAge=i;break}else this.activeAge=""}}}});export{c as u};
