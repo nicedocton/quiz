@@ -5,8 +5,4 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
   ],
   css: ['~/assets/styles/style.scss'],
-  app: {
-    baseURL: '/nuxt-github-pages/',
-    buildAssetsDir: 'assets/',
-  }
 })
