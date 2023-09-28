@@ -1,0 +1,14 @@
+.footer {
+  text-align: center;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  color: var(--text-opacity);
+  padding: 24px 0;
+  p {
+    margin-top: 8px;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}

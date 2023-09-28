@@ -1,0 +1,21 @@
+:root {
+  //base
+  --animation: all 0.3s ease-in-out;
+
+  //sizes
+  --minWidth: 320px;
+  --maxWidth: 2000px;
+  --maxWidthContainer: 368px;
+  --md1: calc(var(--maxWidthContainer) + 16px);
+  --md2: 1024.98px;
+  --md3: 767.98px;
+  --md4: 479.98px;
+
+  // colors
+  --light-color: #ffffff;
+  --black-color: #111111;
+  --text-main: #24234c;
+  --text-opacity: #6b7280;
+  --color-primary: #5653fe;
+  --color-secondary: #7abf4c;
+}

@@ -1,0 +1,40 @@
+.age-picker {
+
+}
+
+.grid {
+  &__item {
+    &._male {
+      .grid__item-img {
+        &._18 {
+          background-image: url("/images/slides/age-picker/male/18.png");
+        }
+        &._25 {
+          background-image: url("/images/slides/age-picker/male/25.png");
+        }
+        &._35 {
+          background-image: url("/images/slides/age-picker/male/35.png");
+        }
+        &._45 {
+          background-image: url("/images/slides/age-picker/male/45.png");
+        }
+      }
+    }
+    &._female {
+      .grid__item-img {
+        &._18 {
+          background-image: url("/images/slides/age-picker/female/18.png");
+        }
+        &._25 {
+          background-image: url("/images/slides/age-picker/female/25.png");
+        }
+        &._35 {
+          background-image: url("/images/slides/age-picker/female/35.png");
+        }
+        &._45 {
+          background-image: url("/images/slides/age-picker/female/45.png");
+        }
+      }
+    }
+  }
+}

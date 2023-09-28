@@ -1,0 +1,33 @@
+.gender {
+  padding-top: 32px;
+}
+
+.grid {
+  &__item {
+    &._male {
+      background-image: url("@/assets/images/blue-arch.svg");
+      button {
+        background-color: var(--color-primary);
+      }
+    }
+    &._female {
+      background-image: url("@/assets/images/green-arch.svg");
+      button {
+        background-color: var(--color-secondary);
+      }
+    }
+    &-img {
+      ._male & {
+        background-image: url("@/assets/images/male.png");
+      }
+      ._female & {
+        background-image: url("@/assets/images/female.png");
+      }
+    }
+    button {
+      span {
+        font-weight: 600;
+      }
+    }
+  }
+}
