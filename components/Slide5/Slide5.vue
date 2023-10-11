@@ -1,7 +1,7 @@
 <template>
   <div class="question">
     <div class="question__title">
-      <h1 class="h1">When was the last time you couldn't afford something?</h1>
+      <h1 class="h1">{{ $t('slide5.title') }}</h1>
     </div>
     <div class="grid">
       <div class="grid__col">
@@ -13,9 +13,9 @@
         </div>
       </div>
       <div class="grid__col">
-        <nuxt-link v-for="variant in variants" to="/slides/6" @click="setSlide(6)" :class="`grid__block`" :key="variant.id" >
-          <div class="grid__block-text">{{ variant.text }}</div>
-        </nuxt-link>
+        <LocLink v-for="(variant, index) in 4" to="/slides/6" @click="setSlide(6)" :class="`grid__block`" :key="index" >
+          <div class="grid__block-text">{{ $t(`slide5.variant${index + 1}`) }}</div>
+        </LocLink>
       </div>
     </div>
   </div>
@@ -30,37 +30,15 @@ const age = useAgesStore();
 const slide = useSlidesStore();
 const gender = useGendersStore();
 
-const variants:object = [
-  {
-    id: 1,
-    text: "This month",
-  },
-  {
-    id: 2,
-    text: "1 month ago",
-  },
-  {
-    id: 3,
-    text: "This year",
-  },
-  {
-    id: 4,
-    text: "More than 1 year ago",
-  }
-];
-
 onMounted(() => {
+  age.loadAge();
+  gender.loadGender();
   slide.setSlide(5);
 })
 
 const setSlide = (index: number) => {
   slide.setSlide(index);
 }
-
-onMounted(() => {
-  age.loadAge();
-  gender.loadGender();
-})
 
 </script>
 

@@ -1,7 +1,7 @@
 <template>
   <div class="footer">
-    <p>At the end of the quiz, you'll get recommendations exclusively for you!</p>
-    <p>This will help you make more money in trading</p>
+    <p>{{ $t('footer.title') }}</p>
+    <p>{{ $t('footer.subtitle') }}</p>
   </div>
 </template>
 

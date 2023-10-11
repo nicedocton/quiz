@@ -1,12 +1,12 @@
 <template>
   <div class="question">
     <div class="question__title">
-      <h1 class="h1">Annual income level you want to have</h1>
+      <h1 class="h1">{{ $t(`slide3.title`) }}</h1>
     </div>
     <div class="flex flex-col">
-      <nuxt-link v-for="variant in variants" to="/slides/4" @click="setSlide(4)" :class="`flex__block`" :key="variant.id" >
-        <div class="flex__block-text">{{ variant.text }}</div>
-      </nuxt-link>
+      <LocLink v-for="(variant, index) in 3" to="/slides/4" @click="setSlide(4)" :class="`flex__block`" :key="index" >
+        <div class="flex__block-text">{{ $t(`slide3.variant${index + 1}`) }}</div>
+      </LocLink>
     </div>
   </div>
 </template>
@@ -19,21 +19,6 @@ import {useGendersStore} from "~/stores/genders";
 const age = useAgesStore();
 const slide = useSlidesStore();
 const gender = useGendersStore();
-
-const variants:object = [
-  {
-    id: 1,
-    text: "$50,000 - $100,000",
-  },
-  {
-    id: 2,
-    text: "$100,000 - $250,000",
-  },
-  {
-    id: 3,
-    text: "More than $250,000",
-  }
-];
 
 const setSlide = (index: number) => {
   slide.setSlide(index);

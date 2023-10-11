@@ -1,30 +1,31 @@
 <template>
   <div class="gender">
     <div class="title">
-      <h1 class="h1">Let's Create Your Wealth Growth Plan</h1>
-      <p>Select your gender:</p>
+      <h1 class="h1">{{ $t('mainPage.title') }}</h1>
+      <p>{{ $t('mainPage.subtitle') }}</p>
     </div>
     <div class="grid">
-      <nuxt-link to="/age-picker" @click="setMan" class="grid__item _male">
+      <LocLink to="/age-picker" @click="setMan" class="grid__item _male">
         <div class="grid__item-img"></div>
-        <button>
-          <span>Male</span>
+        <button class="btn">
+          <span>{{ $t('gender.male') }}</span>
           <i class="caret"></i>
         </button>
-      </nuxt-link>
-      <nuxt-link to="/age-picker" @click="setWoman" class="grid__item _female">
+      </LocLink>
+      <LocLink to="/age-picker" @click="setWoman" class="grid__item _female">
         <div class="grid__item-img"></div>
-        <button>
-          <span>Female</span>
+        <button class="btn">
+          <span>{{ $t('gender.female') }}</span>
           <i class="caret"></i>
         </button>
-      </nuxt-link>
+      </LocLink>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import {useGendersStore} from "~/stores/genders";
+const localePath = useLocalePath();
 const gender = useGendersStore();
 
 const setMan = () => {
@@ -34,7 +35,6 @@ const setMan = () => {
 const setWoman = () => {
   gender.setWoman()
 }
-
 
 </script>
 

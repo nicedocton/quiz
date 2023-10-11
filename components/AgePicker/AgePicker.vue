@@ -1,16 +1,16 @@
 <template>
   <div class="age-picker">
     <div class="title">
-      <h1 class="h2">Wealth growth plan according to your age</h1>
+      <h1 class="h2">{{ $t('age.title') }}</h1>
     </div>
     <div class="grid">
-      <nuxt-link v-for="age in ages" to="/slides/1" @click="setAge(age.age)" :class="`grid__item _${gender.gender}`" :key="age.id" >
+      <LocLink v-for="age in ages" to="/slides/1" @click="setAge(age.age)" :class="`grid__item _${gender.gender}`" :key="age.id" >
         <div :class="`grid__item-img _${age.age}`"></div>
-        <button>
+        <button class="btn">
           <span>{{ age.text }}</span>
           <i class="caret"></i>
         </button>
-      </nuxt-link>
+      </LocLink>
     </div>
   </div>
 </template>
@@ -28,12 +28,17 @@ onMounted(() => {
   gender.loadGender();
 })
 
-const setAge = (period: string) => {
+const setAge = (period: number) => {
   age.setAge(period);
   slide.setSlide(1);
 }
+interface AgesType {
+  id: number;
+  age: number;
+  text: string;
+}
 
-const ages = [
+const ages = ref<AgesType[]>([
   {
     id: 1,
     age: 18,
@@ -54,7 +59,7 @@ const ages = [
     age: 45,
     text: "46+"
   }
-]
+])
 </script>
 
 <style scoped lang="scss">

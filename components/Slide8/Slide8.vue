@@ -6,16 +6,16 @@
     <div class="flex justify-center">
       <button
           @click="toggleActive(variant.id)"
-          class="rounded"
+          class="btn rounded"
           :class="variant.isActive ? '_active' : ''"
           v-for="variant in variants"
           :key="variant.id"
       >
-        {{ variant.text }}
+        {{ $t(`slide8.variant${variant.id}`) }}
       </button>
     </div>
     <div v-if="activeVariants.length" class="btn-wrapper">
-      <button class="btn" @click="goToNextSLide(9)">Continue</button>
+      <button class="btn big" @click="goToNextSLide(9)">{{ $t('buttons.continue') }}</button>
     </div>
   </div>
 </template>
@@ -29,62 +29,52 @@ const route = useRouter();
 const age = useAgesStore();
 const slide = useSlidesStore();
 const gender = useGendersStore();
+const localePath = useLocalePath();
 
 interface Variant {
   id: number;
-  text: string;
   isActive: boolean;
 }
 
 const variants = ref<Variant[]>([
   {
     id: 1,
-    text: "Investing",
     isActive: false
   },
   {
     id: 2,
-    text: "Stocks",
     isActive: false
   },
   {
     id: 3,
-    text: "Crypto",
     isActive: false
   },
   {
     id: 4,
-    text: "Debt management",
     isActive: false
   },
   {
     id: 5,
-    text: "Business",
     isActive: false
   },
   {
     id: 6,
-    text: "Forex trading",
     isActive: false
   },
   {
     id: 7,
-    text: "Passive income",
     isActive: false
   },
   {
     id: 8,
-    text: "Financial literacy",
     isActive: false
   },
   {
     id: 9,
-    text: "Real estate",
     isActive: false
   },
   {
     id: 10,
-    text: "Entrepreneurship",
     isActive: false
   }
 ]);
@@ -95,7 +85,7 @@ const setSlide = (index: number) => {
 
 const goToNextSLide = (index: number) => {
   slide.setSlide(index);
-  route.push("/slides/9");
+  route.push(`${localePath('/slides/9')}`)
 }
 
 const activeVariants = computed(() => {

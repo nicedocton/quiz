@@ -1,12 +1,12 @@
 <template>
   <div class="final">
     <div class="final__title">
-      <h1>Summary of your<br><span>Wealth-Growth</span>&nbsp;profile</h1>
+      <h1>{{ $t("final.title", { plan: $final() }) }}</h1>
     </div>
     <div class="final__content">
       <div class="flex justify-between">
         <div class="flex flex-col score">
-          <div class="score__text">Readiness score</div>
+          <div class="score__text">{{ $t('final.score') }}</div>
           <div class="score__img">
             <div class="relative">
               <div class="progress-circle">
@@ -17,14 +17,14 @@
               </div>
               <div class="absolute">
                 <p class="big">{{ score }}</p>
-                <p>Reqiured - 75</p>
+                <p>{{ $t('final.required') }}</p>
               </div>
             </div>
           </div>
         </div>
         <div class="flex-col">
           <div class="score__result">
-            Result: Perfect
+            {{ $t('final.result') }}
             <span></span>
           </div>
           <div class="score__bg">
@@ -43,8 +43,8 @@
               <span></span>
             </div>
             <div class="diagram__text">
-              <span>MINDSET</span>
-              Crypto investor
+              <span>{{ $t('final.variant1') }}</span>
+              {{ $t('final.answer1') }}
             </div>
           </div>
           <div class="diagram__col">
@@ -53,8 +53,8 @@
               <span></span>
             </div>
             <div class="diagram__text">
-              <span>MOTIVATION</span>
-              High
+              <span>{{ $t('final.variant2') }}</span>
+              {{ $t('final.answer2') }}
             </div>
           </div>
           <div class="diagram__col">
@@ -63,8 +63,8 @@
               <span></span>
             </div>
             <div class="diagram__text">
-              <span>INCOME</span>
-              Fit for crypto
+              <span>{{ $t('final.variant3') }}</span>
+              {{ $t('final.answer3') }}
             </div>
           </div>
           <div class="diagram__col">
@@ -73,8 +73,8 @@
               <span></span>
             </div>
             <div class="diagram__text">
-              <span>KNOWLEDGE</span>
-              Beginner
+              <span>{{ $t('final.variant4') }}</span>
+              {{ $t('final.answer4') }}
             </div>
           </div>
         </div>
@@ -87,12 +87,12 @@
       <div class="final__bottom-img">
       </div>
       <div class="final__bottom-content">
-        <p class="final__bottom-title">Impressive score to succeed in investing</p>
-        <p class="final__bottom-text">Over the past 10 years, average stock market annual return was 14.7%. You also can benefit from investing in stock market.</p>
+        <p class="final__bottom-title">{{ $t('final.bottom_title') }}</p>
+        <p class="final__bottom-text">{{ $t('final.bottom_text') }}</p>
       </div>
     </div>
     <div class="btn-wrapper">
-      <button class="btn" @click="goTo">{{ tradeText}}</button>
+      <a :href="goTo" class="btn big">{{ tradeText }}</a>
     </div>
   </div>
 </template>
@@ -116,6 +116,8 @@ const trailColor:string = '#f7f7f7';
 const pathLen = 0;
 const score = ref<number>(0);
 const tradeText = ref<string>('');
+const goTo = ref<string>('');
+const affParam = ref<string>('');
 
 const innerStyle = computed(() => {
   return { width: `${size}px`, height: `${size}px` }
@@ -151,6 +153,17 @@ const circleFunc = (num:number) => {
   percent.value = num;
 }
 
+const { locale } = useI18n()
+const $final = () => {
+  if (locale.value === 'en') {
+    return 'Wealth-Growth'
+  } else if (locale.value === 'pt') {
+    return 'crescimento de patrimônio'
+  } else if (locale.value === 'es') {
+    return 'crecimiento económico'
+  }
+}
+
 const countdownToNumber = (start:number, end:number, duration:number) => {
   const intervalMs = 100; // Update every 100ms (adjust as needed)
   const steps = Math.abs(end - start);
@@ -169,13 +182,60 @@ const countdownToNumber = (start:number, end:number, duration:number) => {
 
 const getText = () => {
   if(trade.tradeType === 'signal') {
-    tradeText.value = 'Get free signals';
+    if (locale.value === 'en') {
+      tradeText.value = 'Get free signals';
+    } else if (locale.value === 'pt') {
+      tradeText.value = 'Obtenha sinais gratuitos';
+    } else if (locale.value === 'es') {
+      tradeText.value = 'Obtén señales gratis';
+    }
   }
   else if(trade.tradeType === 'robot') {
-    tradeText.value = 'Get free robot';
+    if (locale.value === 'en') {
+      tradeText.value = 'Get free AI help';
+    } else if (locale.value === 'pt') {
+      tradeText.value = 'Obtenha ajuda gratuita sobre IA';
+    } else if (locale.value === 'es') {
+      tradeText.value = 'Obtenga ayuda de IA gratuita';
+    }
   }
   else if(trade.tradeType === 'strategy') {
-    tradeText.value = 'Get free secret strategy';
+    if (locale.value === 'en') {
+      tradeText.value = 'Get free secret strategy';
+    } else if (locale.value === 'pt') {
+      tradeText.value = 'Obtenha estratégia secreta gratuita';
+    } else if (locale.value === 'es') {
+      tradeText.value = 'Obtén una estrategia secreta gratis';
+    }
+  }
+}
+
+const getUrlParams = () => {
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+
+  if (urlParams.has("aff")) {
+    const affValue = urlParams.get("aff");
+    affParam.value = affValue;
+  }
+}
+
+const getUrl = () => {
+  if(trade.tradeType === 'signal') {
+    goTo.value = 'https://t.me/exnovasignals';
+  }
+  else if(trade.tradeType === 'robot') {
+    const temporaryUrl = 'https://app.appsflyer.com/com.exnova.bot?';
+    if(affParam.value) {
+      goTo.value = temporaryUrl + 'pid=' + affParam.value + '&c=quiz';
+    }
+    else {
+      goTo.value = temporaryUrl + 'c=quiz';
+    }
+    console.log('goTo', goTo.value)
+  }
+  else if(trade.tradeType === 'strategy') {
+    goTo.value = 'https://trade.exnova.com/en/register';
   }
 }
 
@@ -188,6 +248,8 @@ onMounted(() => {
   }, 100);
   countdownToNumber(0.0, 80.9, 1800);
   getText();
+  getUrlParams();
+  getUrl();
 })
 
 </script>

@@ -1,18 +1,19 @@
 <template>
   <div class="question">
     <div class="question__title">
-      <h1 class="h1">How frequently do you buy stuff with a credit card?</h1>
+      <h1 class="h1">{{$t('slide7.title') }}</h1>
+      <p>{{ $t('slide7.subtitle') }}</p>
     </div>
     <div class="flex flex-col">
-      <nuxt-link v-for="variant in variants" to="/slides/8" @click="setSlide(8)" :class="`flex__block`" :key="variant.id" >
-        <div class="flex__block-text">{{ variant.text }}</div>
+      <LocLink v-for="(variant, index) in 5" to="/slides/8" @click="setSlide(8)" :class="`flex__block`" :key="index" >
+        <div class="flex__block-text">{{ $t(`slide7.variant${index + 1}`) }}</div>
         <div class="flex__block-img">
           <img
-              :src="`/images/slides/slide7/${variant.id}.png`"
+              :src="`/images/slides/slide7/${index + 1}.png`"
               alt=""
           />
         </div>
-      </nuxt-link>
+      </LocLink>
     </div>
   </div>
 </template>
@@ -26,41 +27,15 @@ const age = useAgesStore();
 const slide = useSlidesStore();
 const gender = useGendersStore();
 
-const variants:object = [
-  {
-    id: 1,
-    text: "Mortgage",
-  },
-  {
-    id: 2,
-    text: "Auto loan",
-  },
-  {
-    id: 3,
-    text: "Student loan",
-  },
-  {
-    id: 4,
-    text: "Credit card debt",
-  },
-  {
-    id: 5,
-    text: "I don't have any debts",
-  }
-];
-
 onMounted(() => {
+  age.loadAge();
+  gender.loadGender();
   slide.setSlide(7);
 })
 
 const setSlide = (index: number) => {
   slide.setSlide(index);
 }
-
-onMounted(() => {
-  age.loadAge();
-  gender.loadGender();
-})
 
 </script>
 
@@ -71,6 +46,16 @@ onMounted(() => {
     &-img {
       width: 94px;
       height: 94px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &:last-child {
+      .flex__block-img {
+        img {
+          width: 1.5rem;
+        }
+      }
     }
   }
 }

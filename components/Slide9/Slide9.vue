@@ -1,24 +1,24 @@
 <template>
   <div class="question">
     <div class="question__title">
-      <h1 class="h1">Is there something special you want to accumulate money for?</h1>
-      <p>You're more likely to reach your goal if you have something important to aim for</p>
+      <h1 class="h1">{{ $t('slide9.title') }}</h1>
+      <p>{{ $t('slide9.subtitle') }}</p>
     </div>
     <div class="flex flex-col">
-      <nuxt-link v-for="variant in variants" to="/slides/10" @click="setSlide(10)" :class="`flex__block`" :key="variant.id" >
-        <div class="flex__block-text">{{ variant.text }}</div>
+      <LocLink v-for="(variant, index) in 5" to="/slides/10" @click="setSlide(10)" :class="`flex__block`" :key="index" >
+        <div class="flex__block-text">{{ $t(`slide9.variant${index + 1}`) }}</div>
         <div class="flex__block-img">
           <img
-              :src="`/images/slides/slide9/${gender.gender}/${variant.id}.png`"
+              :src="`/images/slides/slide9/${gender.gender}/${index + 1}.png`"
               alt=""
           />
         </div>
-      </nuxt-link>
-      <nuxt-link to="/slides/10" @click="setSlide(10)" :class="`flex__block`" >
-        <div class="flex__block-text">Other</div>
+      </LocLink>
+      <LocLink to="/slides/10" @click="setSlide(10)" :class="`flex__block`" >
+        <div class="flex__block-text">{{ $t('slide9.variant6') }}</div>
         <div class="flex__block-img">
         </div>
-      </nuxt-link>
+      </LocLink>
     </div>
   </div>
 </template>
@@ -31,34 +31,6 @@ import {useGendersStore} from "~/stores/genders";
 const age = useAgesStore();
 const slide = useSlidesStore();
 const gender = useGendersStore();
-
-interface Variant {
-  id: number;
-  text: string;
-}
-
-const variants = ref<Variant[]>([
-  {
-    id: 1,
-    text: "Buy a house",
-  },
-  {
-    id: 2,
-    text: "Wedding",
-  },
-  {
-    id: 3,
-    text: "Vacation",
-  },
-  {
-    id: 4,
-    text: "Buy a car",
-  },
-  {
-    id: 5,
-    text: "Retirement",
-  }
-]);
 
 const setSlide = (index: number) => {
   slide.setSlide(index);

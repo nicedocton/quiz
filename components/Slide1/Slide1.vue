@@ -1,18 +1,18 @@
 <template>
   <div class="question">
     <div class="question__title">
-      <h1 class="h1">Choose your current income level</h1>
+      <h1 class="h1">{{ $t('slide1.title') }}</h1>
     </div>
     <div class="grid gap-2">
-      <nuxt-link v-for="variant in variants" to="/slides/2" @click="setSlide(2)" :class="`grid__block`" :key="variant.id" >
-        <div class="grid__block-text">{{ variant.text }}</div>
+      <LocLink v-for="(variant, index) in 4" to="/slides/2" @click="setSlide(2)" :class="`grid__block`" :key="index">
+        <div class="grid__block-text">{{ $t(`slide1.variant${index + 1}`) }}</div>
         <div :class="`grid__block-img _${age.activeAge}`">
           <img
-              :src="`/images/slides/slide1/${gender.gender}/${age.activeAge}/${variant.id}.png`"
+              :src="`/images/slides/slide1/${gender.gender}/${age.activeAge}/${index+1}.png`"
               alt=""
           />
         </div>
-      </nuxt-link>
+      </LocLink>
     </div>
   </div>
 </template>
@@ -26,25 +26,6 @@ const age = useAgesStore();
 const slide = useSlidesStore();
 const gender = useGendersStore();
 
-const variants:object = [
-  {
-    id: 1,
-    text: "Grow wealth",
-  },
-  {
-    id: 2,
-    text: "Passive income",
-  },
-  {
-    id: 3,
-    text: "Financial independence",
-  },
-  {
-    id: 4,
-    text: "Other",
-  }
-];
-
 const setSlide = (index: number) => {
   slide.setSlide(index);
 }
@@ -52,9 +33,7 @@ const setSlide = (index: number) => {
 onMounted(() => {
   age.loadAge();
   gender.loadGender();
-  onMounted(() => {
-    slide.setSlide(1);
-  })
+  slide.setSlide(1);
 })
 
 </script>
