@@ -40,7 +40,7 @@ export default defineNuxtConfig({
     defaultLocale: "en",
 
     // Disabling automatic locale detection (see below)
-    detectBrowserLanguage: false,
+    detectBrowserLanguage: true,
 
     vueI18n: "./i18n.config.ts"
   },

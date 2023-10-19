@@ -6,6 +6,7 @@
       </div>
     </div>
     <LocLink to="/" @click="slide.setSlide(0)" class="logo">Exnova<span>Academy</span></LocLink>
+    <LangSwitcher v-if="slide.activeSlide === 0" />
     <div class="header__pagination" v-if="slide.activeSlide >= 1">
       <span>{{ slide.activeSlide }}</span> / 10
     </div>
