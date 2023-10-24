@@ -6,20 +6,19 @@ const supportedLocales = locales.value as Array<LocaleObject>
 const router = useRouter()
 const switchLocalePath = useSwitchLocalePath()
 
-function onLocaleChanged(event: Event) {
-  const target = event.target as HTMLInputElement
-  router.push({ path: switchLocalePath(target.value) })
+function onLocaleChanged(value:string) {
+  router.push({ path: switchLocalePath(value) })
 }
 </script>
 
 <template>
   <div class="lang">
-    🌐
-    <select :value="locale" @change="onLocaleChanged">
-      <option v-for="loc in supportedLocales" :key="loc.code" :value="loc.code">
-        {{ loc.name }}
-      </option>
-    </select>
+<!--    <select :value="locale" @change="onLocaleChanged">-->
+<!--      <option v-for="loc in supportedLocales" :key="loc.code" :value="loc.code">-->
+<!--        {{ loc.name }}-->
+<!--      </option>-->
+<!--    </select>-->
+    <SelectItem :list="supportedLocales" :value="locale" @on:change="onLocaleChanged" />
   </div>
 </template>
 
@@ -27,7 +26,7 @@ function onLocaleChanged(event: Event) {
 <style lang="scss" scoped>
 .lang {
   position: absolute;
-  top: 29px;
+  top: 25px;
   right: 10px;
   display: flex;
   gap: 0;

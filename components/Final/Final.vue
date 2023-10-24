@@ -101,11 +101,13 @@ import {useAgesStore} from "~/stores/ages";
 import {useSlidesStore} from "~/stores/slides";
 import {useGendersStore} from "~/stores/genders";
 import {useTradesStore} from "~/stores/trades";
+import {useUrlParamsStore} from "~/stores/urlParams";
 
 const age = useAgesStore();
 const slide = useSlidesStore();
 const gender = useGendersStore();
 const trade = useTradesStore();
+const urlParams = useUrlParamsStore();
 const len = Math.PI * 2 * 40;
 const size = ref<number>(140);
 let percent = ref<number>(0);
@@ -117,7 +119,6 @@ const pathLen = 0;
 const score = ref<number>(0);
 const tradeText = ref<string>('');
 const goTo = ref<string>('');
-const affParam = ref<string>('');
 
 const innerStyle = computed(() => {
   return { width: `${size}px`, height: `${size}px` }
@@ -201,22 +202,12 @@ const getText = () => {
   }
   else if(trade.tradeType === 'strategy') {
     if (locale.value === 'en') {
-      tradeText.value = 'Get free secret strategy';
+      tradeText.value = 'Get free $1000';
     } else if (locale.value === 'pt') {
-      tradeText.value = 'Obtenha estratégia secreta gratuita';
+      tradeText.value = 'Ganhe $1000 grátis';
     } else if (locale.value === 'es') {
-      tradeText.value = 'Obtén una estrategia secreta gratis';
+      tradeText.value = 'Obtén $1000 gratis';
     }
-  }
-}
-
-const getUrlParams = () => {
-  const queryString = window.location.search;
-  const urlParams = new URLSearchParams(queryString);
-
-  if (urlParams.has("aff")) {
-    const affValue = urlParams.get("aff");
-    affParam.value = affValue;
   }
 }
 
@@ -224,18 +215,24 @@ const getUrl = () => {
   if(trade.tradeType === 'signal') {
     goTo.value = 'https://t.me/exnovasignals';
   }
+
   else if(trade.tradeType === 'robot') {
     const temporaryUrl = 'https://app.appsflyer.com/com.exnova.bot?';
-    if(affParam.value) {
-      goTo.value = temporaryUrl + 'pid=' + affParam.value + '&c=quiz';
+    if(urlParams.affParam || urlParams.affTrackParam) {
+      goTo.value = temporaryUrl + 'pid=' + urlParams.affParam + '&c=' + urlParams.affTrackParam;
     }
     else {
       goTo.value = temporaryUrl + 'c=quiz';
     }
-    console.log('goTo', goTo.value)
   }
   else if(trade.tradeType === 'strategy') {
-    goTo.value = 'https://trade.exnova.com/en/register';
+    const temporaryUrl = 'https://trade.exnova.com/en/register?';
+    if(urlParams.affParam || urlParams.affTrackParam) {
+      goTo.value = temporaryUrl + 'pid=' + urlParams.affParam + '&c=' + urlParams.affTrackParam;
+    }
+    else {
+      goTo.value = temporaryUrl + 'c=quiz';
+    }
   }
 }
 
@@ -248,7 +245,6 @@ onMounted(() => {
   }, 100);
   countdownToNumber(0.0, 80.9, 1800);
   getText();
-  getUrlParams();
   getUrl();
 })
 
