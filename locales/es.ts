@@ -64,7 +64,7 @@ export default {
         "variant5": "No tengo deudas"
     },
     "slide8": {
-        "title": "Elige temas que te interesen",
+        "title": "Elige los temas que te interesan",
         "variant1": "Inversión",
         "variant2": "Valores",
         "variant3": "Criptomonedas",

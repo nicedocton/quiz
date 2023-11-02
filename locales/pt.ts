@@ -64,7 +64,7 @@ export default {
         "variant5": "Eu não tenho quaisquer dívidas"
     },
     "slide8": {
-        "title": "Escolha tópicos de seu interesse",
+        "title": "Escolha tópicos do seu interesse",
         "variant1": "Investimento",
         "variant2": "Ações",
         "variant3": "Criptomoedas",
