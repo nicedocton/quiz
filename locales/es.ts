@@ -55,8 +55,8 @@ export default {
         "variant4": "No tengo tarjeta de crédito"
     },
     "slide7": {
-        "title": "Qual é a sua maior dívida?",
-        "subtitle": "Especifique o tipo de dívida.",
+        "title": "¿Cuál es tu deuda más grande?",
+        "subtitle": "Por favor especifique el tipo de deuda.",
         "variant1": "Hipoteca",
         "variant2": "Préstamo para un coche",
         "variant3": "Préstamo de estudios",
@@ -64,7 +64,7 @@ export default {
         "variant5": "No tengo deudas"
     },
     "slide8": {
-        "title": "Elige los temas que te interesan",
+        "title": "Elige temas que te interesen",
         "variant1": "Inversión",
         "variant2": "Valores",
         "variant3": "Criptomonedas",

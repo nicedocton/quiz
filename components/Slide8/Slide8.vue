@@ -1,7 +1,7 @@
 <template>
   <div class="question">
     <div class="question__title">
-      <h1 class="h1">Choose topics you are interested in</h1>
+      <h1 class="h1">{{$t('slide8.title') }}</h1>
     </div>
     <div class="flex justify-center">
       <button
