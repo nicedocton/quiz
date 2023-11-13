@@ -4,10 +4,10 @@
       <h1 class="h2">{{ $t('age.title') }}</h1>
     </div>
     <div class="grid">
-      <LocLink v-for="age in ages" to="/slides/1" @click="setAge(age.age)" :class="`grid__item _${gender.gender}`" :key="age.id" >
+      <LocLink v-for="(age, index) in ages" to="/slides/1" @click="setAge(age.age)" :class="`grid__item _${gender.gender}`" :key="age.id" >
         <div :class="`grid__item-img _${age.age}`"></div>
         <button class="btn">
-          <span>{{ age.text }}</span>
+          <span>{{ $t(`age.variant${index + 1}`) }}</span>
           <i class="caret"></i>
         </button>
       </LocLink>

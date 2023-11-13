@@ -13,10 +13,14 @@ export default {
         "female": "Feminino"
     },
     "age": {
-        "title": "Plano de crescimento de patrimônio de acordo com sua idade"
+        "title": "Plano de crescimento de patrimônio de acordo com sua idade",
+        "variant1": "18 a 25",
+        "variant2": "26 a 35",
+        "variant3": "36 a 45",
+        "variant4": "46 ou mais"
     },
     "slide1": {
-        "title": "Qual é o teu objetivo?",
+        "title": "Qual é o seu objetivo?",
         "variant1": "Aumentar o patrimônio",
         "variant2": "Renda passiva",
         "variant3": "Independência financeira",
@@ -29,10 +33,10 @@ export default {
         "variant3": "Alto"
     },
     "slide3": {
-        "title": "Nível de renda anual que você deseja ter",
-        "variant1": "$50,000 - $100,000",
-        "variant2": "$100,000 - $250,000",
-        "variant3": "Mais de $250.000"
+        "title": "Nível de renda anual que você deseja",
+        "variant1": "$ 50.000 a $ 100.000",
+        "variant2": "$ 100.000 a $ 250.000",
+        "variant3": "Mais de $ 250.000"
     },
     "slide4": {
         "title": "Qual é a sua fonte de renda atual?",
@@ -43,9 +47,9 @@ export default {
     "slide5": {
         "title": "Quando foi a última vez que você não pôde comprar algo?",
         "variant1": "Neste mês",
-        "variant2": "1 mês atrás",
+        "variant2": "Há um mês",
         "variant3": "Neste ano",
-        "variant4": "Há mais de 1 ano"
+        "variant4": "Há mais de um ano"
     },
     "slide6": {
         "title": "Com que frequência você compra coisas com cartão de crédito?",
@@ -72,13 +76,13 @@ export default {
         "variant5": "Negócios",
         "variant6": "Negociação de Forex",
         "variant7": "Renda passiva",
-        "variant8": "Letramento financeiro",
+        "variant8": "Educação financeira",
         "variant9": "Mercado imobiliário",
         "variant10": "Empreendedorismo"
     },
     "slide9": {
-        "title": "Existe algo especial para o qual você deseja acumular dinheiro?",
-        "subtitle": "É mais provável que você alcance seu objetivo se tiver algo importante a almejar",
+        "title": "Existe algo especial para o qual você deseja guardar dinheiro?",
+        "subtitle": "É mais provável que você alcance seu objetivo se almejar algo importante",
         "variant1": "Comprar uma casa",
         "variant2": "Casamento",
         "variant3": "Férias",
@@ -103,7 +107,7 @@ export default {
         "variant4": "CONHECIMENTO",
         "answer1": "Investidor de criptomoedas",
         "answer2": "Alta",
-        "answer3": "Adequada para criptomoeda",
+        "answer3": "Adequada para criptomoedas",
         "answer4": "Iniciante",
         "bottom_title": "Pontuação impressionante para ter sucesso no investimento",
         "bottom_text": "Nos últimos 10 anos, o retorno médio anual do mercado de ações foi de 14,7%. Você também pode se beneficiar investindo no mercado de ações."

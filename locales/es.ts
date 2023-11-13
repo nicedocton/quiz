@@ -5,108 +5,112 @@ export default {
         "subtitle": "Esto te ayudará a ganar más dinero en el trading"
     },
     "mainPage": {
-        "title": "Vamos a Crear Tu Plan de Crecimiento Económico",
-        "subtitle": "Selecciona tu sexo:"
+        "title": "Ahora empezaremos a crear tu plan de crecimiento económico",
+        "subtitle": "Elije tu sexo:"
     },
     "gender": {
         "male": "Masculino",
         "female": "Femenino"
     },
     "age": {
-        "title": "Plan de crecimiento económico en función de tu edad"
+        "title": "Plan de crecimiento económico según tu edad",
+        "variant1": "18 a 25 años",
+        "variant2": "26 a 35 años",
+        "variant3": "36 a 45 años",
+        "variant4": "Más de 46 años"
     },
     "slide1": {
-        "title": "¿Cuál es tu objetivo?",
-        "variant1": "Crece económicamente",
-        "variant2": "Ingresos pasivos",
-        "variant3": "Independencia Financiera",
-        "variant4": "Otro"
+        "title": "¿Qué objetivo deseas conseguir?",
+        "variant1": "Crecer económicamente",
+        "variant2": "Obtener ingresos pasivos",
+        "variant3": "Conseguir independencia financiera",
+        "variant4": "Otro diferente"
     },
     "slide2": {
-        "title": "Selecciona tu nivel de ingresos actual",
+        "title": "Selecciona cuál es tu nivel de ingresos actual",
         "variant1": "Bajo",
         "variant2": "Medio",
         "variant3": "Alto"
     },
     "slide3": {
-        "title": "Nivel de ingresos anuales que deseas tener",
-        "variant1": "$50,000 - $100,000",
-        "variant2": "$100,000 - $250,000",
-        "variant3": "Más de 250.000$"
+        "title": "Nivel de ingresos anuales que deseas obtener",
+        "variant1": "50000 $ a 100000 $",
+        "variant2": "100000 $ a 250000 $",
+        "variant3": "Más de 250000 $"
     },
     "slide4": {
-        "title": "¿Cuál es su fuente de ingresos actual?",
+        "title": "¿Cuál es tu fuente de ingresos en la actualidad?",
         "variant1": "Trabajo de 9 a 5",
-        "variant2": "Ingresos pasivos de inversión",
-        "variant3": "Otros"
+        "variant2": "Ingresos pasivos provenientes de las inversiones",
+        "variant3": "De otro tipo"
     },
     "slide5": {
-        "title": "¿Cuándo fue la última vez que no pudiste permitirte algo?",
+        "title": "¿Cuándo fue la ultima vez que no pudiste permitirte comprar algo?",
         "variant1": "Este mes",
         "variant2": "Hace 1 mes",
         "variant3": "Este año",
         "variant4": "Hace más de 1 año"
     },
     "slide6": {
-        "title": "¿Con qué frecuencia compras cosas con tarjeta de crédito?",
+        "title": "¿Cuál es la frecuencia con la que realizas tus compras, utilizando la tarjeta de crédito?",
         "variant1": "Cada día",
         "variant2": "Una vez a la semana",
-        "variant3": "1-4 veces al mes",
+        "variant3": "De 1 a 4 veces al mes",
         "variant4": "No tengo tarjeta de crédito"
     },
     "slide7": {
-        "title": "¿Cuál es tu deuda más grande?",
-        "subtitle": "Por favor especifique el tipo de deuda.",
+        "title": "¿Cuáles son las deudas más grandes que tienes?",
+        "subtitle": "Por favor, indica el tipo de deuda.",
         "variant1": "Hipoteca",
         "variant2": "Préstamo para un coche",
-        "variant3": "Préstamo de estudios",
-        "variant4": "Deudas de tarjetas de crédito",
+        "variant3": "Préstamo estudiantil",
+        "variant4": "Deudas provenientes de las tarjetas de crédito",
         "variant5": "No tengo deudas"
     },
     "slide8": {
-        "title": "Elige los temas que te interesan",
-        "variant1": "Inversión",
-        "variant2": "Valores",
+        "title": "Elige los temas que coincidan con tus intereses",
+        "variant1": "Inversiones",
+        "variant2": "Acciones",
         "variant3": "Criptomonedas",
-        "variant4": "Gestión de la deuda",
-        "variant5": "Empresa",
-        "variant6": "Forex trading",
+        "variant4": "Gestión de deudas",
+        "variant5": "Empresas",
+        "variant6": "Inversiones en Forex",
         "variant7": "Ingresos pasivos",
-        "variant8": "Educación financiera",
-        "variant9": "Finanzas",
-        "variant10": "Emprendimiento"
+        "variant8": "Formación e instrucción financiera",
+        "variant9": "Bienes raíces",
+        "variant10": "Iniciativas empresariales"
     },
     "slide9": {
-        "title": "¿Hay algo especial para lo que quieras acumular dinero?",
-        "subtitle": " Es más probable que alcances tu objetivo si tienes algo importante a lo que aspirar",
-        "variant1": "Comprar una casa",
-        "variant2": "Boda",
-        "variant3": "Vacaciones",
-        "variant4": "Comprar un coche",
-        "variant5": "Jubilación",
-        "variant6": "Otros"
+        "title": "¿Hay algo que te motive especialmente para ahorrar dinero?",
+        "subtitle": "Si tienes metas o aspiraciones, es mucho más probable que puedas alcanzar tus objetivos",
+        "variant1": "Comprarme una casa",
+        "variant2": "Casarme",
+        "variant3": "Irme de vacaciones",
+        "variant4": "Comprarme un coche",
+        "variant5": "Jubilarme",
+        "variant6": "Otras metas o aspiraciones"
     },
     "slide10": {
-        "title": "¿Cómo quieres operar?",
-        "variant1": "Usando señales",
-        "variant2": "Con la ayuda de una IA",
+        "title": "¿Cómo quieres empezar a invertir?",
+        "variant1": "Utilizando los indicadores",
+        "variant2": "Obteniendo ayuda de una Inteligencia Artificial (IA)",
         "variant3": "Por mi mismo"
     },
     "final": {
-        "title": "Resumen de tu Perfil de {plan}",
+        "title": "Desglose de tu perfil de {plan}",
         "score": "Nivel de preparación",
         "required": "Requerido - 75",
-        "result": "Resultado: Perfecto",
-        "variant1": "MINDSET",
+        "result": "Resultado: perfecto",
+        "variant1": "MENTALIDAD",
         "variant2": "MOTIVACIÓN",
         "variant3": "INGRESOS",
         "variant4": "CONOCIMIENTOS",
-        "answer1": "Criptoinversor",
-        "answer2": "Alto",
-        "answer3": "Apto para criptomonedas",
+        "answer1": "Inversor en criptomonedas",
+        "answer2": "Alta",
+        "answer3": "Adecuados para las criptomonedas",
         "answer4": "Principiante",
-        "bottom_title": "Impresionante puntuación para tener éxito en la inversión",
-        "bottom_text": "En los últimos 10 años, la rentabilidad media anual del mercado de valores ha sido del 14,7%. Tú también puedes beneficiarte de invertir en bolsa."
+        "bottom_title": "Has obtenido una puntuación impresionante, en lo que respecta a tener éxito como inversor.",
+        "bottom_text": "Durante los últimos 10 años, la rentabilidad media anual de los mercados bursátiles, ha sido del 14.7 %. Ahora, tú también podrás sacar todo el provecho de las inversiones en bolsa."
     },
     "buttons": {
         "continue": "Continuar"

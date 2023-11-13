@@ -13,7 +13,11 @@ export default {
         "female": "Female"
     },
     "age": {
-        "title": "Wealth growth plan according to your age"
+        "title": "Wealth growth plan according to your age",
+        "variant1": "18-25",
+        "variant2": "26-35",
+        "variant3": "36-45",
+        "variant4": "46+"
     },
     "slide1": {
         "title": "What is your goal?",
@@ -30,8 +34,8 @@ export default {
     },
     "slide3": {
         "title": "Annual income level you want to have",
-        "variant1": "$50,000 - $100,000",
-        "variant2": "$100,000 - $250,000",
+        "variant1": "$50,000–$100,000",
+        "variant2": "$100,000–$250,000",
         "variant3": "More than $250,000"
     },
     "slide4": {
@@ -51,7 +55,7 @@ export default {
         "title": "How frequently do you buy stuff with a credit card?",
         "variant1": "Every day",
         "variant2": "Once a week",
-        "variant3": "1-4 times a month",
+        "variant3": "1–4 times a month",
         "variant4": "I do not have a credit card"
     },
     "slide7": {

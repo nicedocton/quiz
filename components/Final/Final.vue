@@ -188,7 +188,7 @@ const getText = () => {
     } else if (locale.value === 'pt') {
       tradeText.value = 'Obtenha sinais gratuitos';
     } else if (locale.value === 'es') {
-      tradeText.value = 'Obtén señales gratis';
+      tradeText.value = 'Obtener indicadores gratis';
     }
   }
   else if(trade.tradeType === 'robot') {
